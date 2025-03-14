@@ -1,8 +1,8 @@
-import { Intro } from '@/type';
+import { Intro } from "@/type";
 
 export default async function HomePage() {
-  const res = fetch("http://localhost:4000/intro");
-  const introData: Intro = await (await res).json();
+  const res = await fetch("http://localhost:4000/intro");
+  const introData: Intro = await res.json();
 
   if (!introData) return <div>로딩중...</div>;
 
